@@ -59,13 +59,13 @@ class DiplomskiRadovi implements iRadovi {
             $oib = $this->oib_tvrtke;
 
             $sql = "INSERT INTO diplomski_radovi (naziv_rada, tekst_rada, link_rada, oib_tvrtke) VALUES ('$naziv', '$tekst', '$link', '$oib')";
-            
-            if($conn->query($sql) === true) {
-                $this->getAsArray();
-            }
-            else {
-                    echo "Error! " . $sql . "<br>" . $conn->error;
-            };
+            $conn->query($sql);
+            // if($conn->query($sql) === true) {
+            //     $this->getAsArray();
+            // }
+            // else {
+            //         echo "Error! " . $sql . "<br>" . $conn->error;
+            // };
             $conn->close();
 
         }
