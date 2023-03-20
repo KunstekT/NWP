@@ -58,6 +58,12 @@
                 }
             }
 
+            if (!is_dir("backup")) {
+                if (!@mkdir("backup")) {
+                    die("<p>Ne možemo stvoriti direktorij 'backup'.</p></body></html>");
+                }
+            }
+
             //Otvori datoteku
             if ($fp = gzopen ("$dir/{$table}_{$time}.sql.gz", 'w9')) {  
 
