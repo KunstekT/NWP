@@ -58,8 +58,8 @@
                 }
             }
 
-            if (!is_dir("backup")) {
-                if (!@mkdir("backup")) {
+            if (!is_dir($dir)) {
+                if (!@mkdir($dir)) {
                     die("<p>Ne možemo stvoriti direktorij 'backup'.</p></body></html>");
                 }
             }
